@@ -18,6 +18,9 @@ $access_token = 'fmNHrc+8OIIx+tgpjawlDr2TDDzHydAnrjSCUHC7Hsg2MFGRe9hmLbHw5NKhuGh
 				date_default_timezone_set("Asia/Bangkok");
 				$today = date("Y-m-d H:i:s");
 
+//check type message 
+$CHECK_TYPE_MESSAGE = "NO";
+
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -29,6 +32,9 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+
+			$CHECK_TYPE_MESSAGE = "YES";
+
 			// Get text sent
 			$vsender = $event['source']['userId'];
 			$text = $event['message']['text'];
@@ -78,7 +84,8 @@ echo "456";
 
 
 
-			
+			if($CHECK_TYPE_MESSAGE=="YES")
+			{
 						$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$vsender."','".$text."','".$today."','".$today."','หมายเหตุ')";
 						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);
 						
@@ -97,15 +104,11 @@ echo "456";
 													
 						mysqli_close($link);
 
+			}
 
 
 
 
-function savetodatabase($v_superintendent,$v_message)
-{
-
-
-}
 
 
 /*function format_date_insert($datainput)
