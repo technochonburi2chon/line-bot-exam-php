@@ -3,7 +3,18 @@
 require "vendor/autoload.php";
 require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
+include('connect.php');
+
+
 $access_token = 'fmNHrc+8OIIx+tgpjawlDr2TDDzHydAnrjSCUHC7Hsg2MFGRe9hmLbHw5NKhuGh7NzlkH6E6K4Xcz3SA8Fe9r2wyA5Qc8+IjrSfDnSLVJqXb1aHOW8SSIpqwlEXfW3sJ0kI+M4awg7BbkE6OHlalTgdB04t89/1O/w1cDnyilFU=';
+
+
+//get_current_date_time
+				$dtz = new DateTimeZone("Asia/Bangkok"); //Your timezone
+				$now = new DateTime(date("Y-m-d H:i:s"), $dtz);
+				date_default_timezone_set("Asia/Bangkok");
+				$today = date("Y-m-d H:i:s");
+
 
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -16,7 +27,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
-			//$text = $event['source']['userId'];
+			$vsender = $event['source']['userId'];
 			$text = $event['message']['text'];
 			// Get replyToken
 			$replyToken = $event['replyToken'];
@@ -33,6 +44,9 @@ if (!is_null($events['events'])) {
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
+
+			savetodatabase($vsender,$text);
+
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
@@ -50,3 +64,30 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
+
+
+function savetodatabase($v_superintendent,$v_message)
+{
+
+						$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$v_superintendent."','".$v_message."','".$today."','".$today."','หมายเหตุ')";
+						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);	
+													
+						mysqli_close($link);
+}
+
+
+/*function format_date_insert($datainput)
+{
+		if($datainput!="")
+		{
+				$aray_time = explode(" ",$datainput);
+
+				$array_date = explode("/",$datainput);
+				return  $array_date[2]."-".$array_date[1]."-".$array_date[0]." ".$aray_time;
+		}
+		else
+		{
+			return null;
+		}
+
+}*/
