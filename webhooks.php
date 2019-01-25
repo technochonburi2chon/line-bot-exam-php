@@ -8,6 +8,7 @@ include('connect.php');
 $vsender = "";
 $text = "";
 $group_id = "";
+$room_id = "";
 
 
 $access_token = 'fmNHrc+8OIIx+tgpjawlDr2TDDzHydAnrjSCUHC7Hsg2MFGRe9hmLbHw5NKhuGh7NzlkH6E6K4Xcz3SA8Fe9r2wyA5Qc8+IjrSfDnSLVJqXb1aHOW8SSIpqwlEXfW3sJ0kI+M4awg7BbkE6OHlalTgdB04t89/1O/w1cDnyilFU=';
@@ -40,6 +41,7 @@ if (!is_null($events['events'])) {
 			$vsender = $event['source']['userId'];
 			$text = $event['message']['text'];
 			$group_id = $event['source']['groupId'];
+			$room_id = $event['source']['room'];
 
 
 			// Get replyToken
@@ -48,7 +50,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $group_id
+				'text' => $room_id
 			];
 
 			
