@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
-			$messagereturn = $event['events'][0]['message']['text'];
+			$messagereturn = $event['message']['text'];
 
 			// Build message to reply back
 			$messages = [
