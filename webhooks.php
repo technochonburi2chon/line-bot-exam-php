@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 			$group_id = $event['source']['groupId'];
 			$room_id = $event['source']['room'];
 
-
+			/*
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -80,7 +80,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 
-			echo $result . "\r\n";
+			echo $result . "\r\n";*/
 		}
 	}
 }
