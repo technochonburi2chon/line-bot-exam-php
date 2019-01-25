@@ -39,7 +39,27 @@ if (!is_null($events['events'])) {
 			];
 
 			
-			$resultsave = savetodatabase($vsender,$text);
+			//$resultsave = savetodatabase($vsender,$text);
+			
+									$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$v_superintendent."','".$v_message."','".$today."','".$today."','หมายเหตุ')";
+						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);
+						
+						
+						if (!$queryResultinsertSetdata) 
+						{
+							//mysqli_rollback($link);
+							return "เกิดข้อผิดพลาดในการบันทึกข้อมูล";
+						}
+						else
+						{	
+							return "บันทึกข้อมูลเสร็จสมบูรณ์";
+						}
+
+
+													
+						mysqli_close($link);
+			
+			
 			
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
@@ -72,23 +92,7 @@ echo "OK";
 function savetodatabase($v_superintendent,$v_message)
 {
 
-						$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$v_superintendent."','".$v_message."','".$today."','".$today."','หมายเหตุ')";
-						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);
-						
-						
-						if (!$queryResultinsertSetdata) 
-						{
-							//mysqli_rollback($link);
-							return "เกิดข้อผิดพลาดในการบันทึกข้อมูล";
-						}
-						else
-						{	
-							return "บันทึกข้อมูลเสร็จสมบูรณ์";
-						}
 
-
-													
-						mysqli_close($link);
 }
 
 
