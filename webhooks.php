@@ -7,6 +7,7 @@ include('connect.php');
 
 $vsender = "";
 $text = "";
+$group_id = "";
 
 
 $access_token = 'fmNHrc+8OIIx+tgpjawlDr2TDDzHydAnrjSCUHC7Hsg2MFGRe9hmLbHw5NKhuGh7NzlkH6E6K4Xcz3SA8Fe9r2wyA5Qc8+IjrSfDnSLVJqXb1aHOW8SSIpqwlEXfW3sJ0kI+M4awg7BbkE6OHlalTgdB04t89/1O/w1cDnyilFU=';
@@ -38,6 +39,9 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$vsender = $event['source']['userId'];
 			$text = $event['message']['text'];
+			$group_id = $event['source']['groupId'];
+
+
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 
@@ -86,7 +90,7 @@ echo "456";
 
 			if($CHECK_TYPE_MESSAGE=="YES")
 			{
-						$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$vsender."','".$text."','".$today."','".$today."','หมายเหตุ')";
+						$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark,group_id) values('".$vsender."','".$text."','".$today."','".$today."','remark','".$group_id."')";
 						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);
 						
 						
