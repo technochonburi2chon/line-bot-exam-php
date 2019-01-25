@@ -48,11 +48,11 @@ if (!is_null($events['events'])) {
 						if (!$queryResultinsertSetdata) 
 						{
 							//mysqli_rollback($link);
-							return "เกิดข้อผิดพลาดในการบันทึกข้อมูล";
+							echo "เกิดข้อผิดพลาดในการบันทึกข้อมูล";
 						}
 						else
 						{	
-							return "บันทึกข้อมูลเสร็จสมบูรณ์";
+							echo "บันทึกข้อมูลเสร็จสมบูรณ์";
 						}
 
 
