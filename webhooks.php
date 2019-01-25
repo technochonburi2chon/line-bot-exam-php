@@ -5,6 +5,9 @@ require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
 
 include('connect.php');
 
+$vsender = "";
+$text = "";
+
 
 $access_token = 'fmNHrc+8OIIx+tgpjawlDr2TDDzHydAnrjSCUHC7Hsg2MFGRe9hmLbHw5NKhuGh7NzlkH6E6K4Xcz3SA8Fe9r2wyA5Qc8+IjrSfDnSLVJqXb1aHOW8SSIpqwlEXfW3sJ0kI+M4awg7BbkE6OHlalTgdB04t89/1O/w1cDnyilFU=';
 
@@ -41,26 +44,6 @@ if (!is_null($events['events'])) {
 			
 			//$resultsave = savetodatabase($vsender,$text);
 
-					echo "123";
-
-			
-									$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$v_superintendent."','".$v_message."','".$today."','".$today."','หมายเหตุ')";
-						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);
-						
-						
-						if (!$queryResultinsertSetdata) 
-						{
-							//mysqli_rollback($link);
-							echo "เกิดข้อผิดพลาดในการบันทึกข้อมูล";
-						}
-						else
-						{	
-							echo "บันทึกข้อมูลเสร็จสมบูรณ์";
-						}
-
-
-													
-						mysqli_close($link);
 			
 			
 			
@@ -92,6 +75,30 @@ if (!is_null($events['events'])) {
 echo "OK";
 
 echo "456";
+
+
+
+			
+						$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$vsender."','".$text."','".$today."','".$today."','หมายเหตุ')";
+						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);
+						
+						
+						if (!$queryResultinsertSetdata) 
+						{
+							//mysqli_rollback($link);
+							echo "เกิดข้อผิดพลาดในการบันทึกข้อมูล";
+						}
+						else
+						{	
+							echo "บันทึกข้อมูลเสร็จสมบูรณ์";
+						}
+
+
+													
+						mysqli_close($link);
+
+
+
 
 
 function savetodatabase($v_superintendent,$v_message)
