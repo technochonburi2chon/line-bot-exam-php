@@ -91,6 +91,8 @@ if (!is_null($events['events'])) {
 }
 echo "OK";
 
+echo "456";
+
 
 function savetodatabase($v_superintendent,$v_message)
 {
