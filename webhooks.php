@@ -40,6 +40,9 @@ if (!is_null($events['events'])) {
 
 			
 			//$resultsave = savetodatabase($vsender,$text);
+
+					echo "123";
+
 			
 									$SQLCREATE_SETDATA = "insert into information2_bot(superintendent,message,date_time_send,date_time_create,remark) values('".$v_superintendent."','".$v_message."','".$today."','".$today."','หมายเหตุ')";
 						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);
