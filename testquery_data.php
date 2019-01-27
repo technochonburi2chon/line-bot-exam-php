@@ -12,7 +12,7 @@
 						
 						if ($num_run_rows>0) 
 						{
-							echo "<table>";
+							echo "<table border=1>";
 								echo "<tr><th>สถานีตำรวจ</th><th>06:00 น.-09:00 น.</th><th>09:00 น. - 12:00 น.</th><th>12:00 น. - 15:00 น.</th><th>15:00 น. - 18:00 น.</th></tr>";
 										while($result = mysqli_fetch_array($queryResultinsertSetdata,MYSQLI_ASSOC))
 										{
@@ -30,7 +30,7 @@
 														
 														if($num_run_rows0609>0)
 														{
-															echo "<table>";
+															echo "<table border=1>";
 																while($result0609 = mysqli_fetch_array($queryResult0609,MYSQLI_ASSOC))
 																{
 																	echo "<tr><td>".$result0609["message"]."</td></tr>";
@@ -51,7 +51,7 @@
 														
 														if($num_run_rows0912>0)
 														{
-															echo "<table>";
+															echo "<table border=1>";
 																while($result0912 = mysqli_fetch_array($queryResult0912,MYSQLI_ASSOC))
 																{
 																	echo "<tr><td>".$result0912["message"]."</td></tr>";
@@ -71,7 +71,7 @@
 														
 														if($num_run_rows1215>0)
 														{
-															echo "<table>";
+															echo "<table border=1>";
 																while($result1215 = mysqli_fetch_array($queryResult1215,MYSQLI_ASSOC))
 																{
 																	echo "<tr><td>".$result1215["message"]."</td></tr>";
@@ -91,7 +91,7 @@
 														
 														if($num_run_rows1518>0)
 														{
-															echo "<table>";
+															echo "<table border=1>";
 																while($result1518 = mysqli_fetch_array($queryResult1518,MYSQLI_ASSOC))
 																{
 																	echo "<tr><td>".$result1518["message"]."</td></tr>";
