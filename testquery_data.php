@@ -11,7 +11,7 @@
 					
 						
 						
-						if (num_run_rows>0) 
+						if ($num_run_rows>0) 
 						{
 							echo "<table>";
 								echo "<tr><th>ID</th><th>ยศ ชื่อ สกุล</th><th>สังกัด</th></tr>";
