@@ -25,6 +25,8 @@
 														$queryResult0612 = mysqli_query($link,$SQLCREATE_0612);		
 														$num_run_rows0612 = mysqli_num_rows($queryResult0612);
 
+														echo "<br>".$SQLCREATE_0612."<br>";
+														
 														if($num_run_rows0612>0)
 														{
 															echo "<table>";
