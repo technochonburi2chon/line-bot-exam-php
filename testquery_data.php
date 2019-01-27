@@ -67,7 +67,7 @@
 														$queryResult1215 = mysqli_query($link,$SQLCREATE_1215);		
 														$num_run_rows1215 = mysqli_num_rows($queryResult1215);
 
-														//echo "<br>".$SQLCREATE_0612."<br>";
+														echo "<br>".$SQLCREATE_1215."<br>";
 														
 														if($num_run_rows1215>0)
 														{
