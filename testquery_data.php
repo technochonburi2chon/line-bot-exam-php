@@ -22,7 +22,7 @@
 											////เริ่มเงื่อนไขแยกตามเวลา
 												echo "<td>";
 														
-														$SQLCREATE_0609 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 06:00:00' AND '2019-01-25 09:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
+														$SQLCREATE_0609 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 06:00:00' AND '2019-01-25 08:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
 														$queryResult0609 = mysqli_query($link,$SQLCREATE_0609);		
 														$num_run_rows0609 = mysqli_num_rows($queryResult0609);
 
@@ -43,7 +43,7 @@
 
 												echo "<td>";
 														
-														$SQLCREATE_0912 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 09:00:00' AND '2019-01-25 12:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
+														$SQLCREATE_0912 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 09:00:00' AND '2019-01-25 11:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
 														$queryResult0912 = mysqli_query($link,$SQLCREATE_0912);		
 														$num_run_rows0912 = mysqli_num_rows($queryResult0912);
 
@@ -63,7 +63,7 @@
 
 												echo "<td>";
 														
-														$SQLCREATE_1215 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 12:00:00' AND '2019-01-25 15:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
+														$SQLCREATE_1215 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 12:00:00' AND '2019-01-25 14:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
 														$queryResult1215 = mysqli_query($link,$SQLCREATE_1215);		
 														$num_run_rows1215 = mysqli_num_rows($queryResult1215);
 
@@ -83,7 +83,7 @@
 
 												echo "<td>";
 														
-														$SQLCREATE_1518 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 15:00:00' AND '2019-01-25 18:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
+														$SQLCREATE_1518 = "select superintendent,message,date_time_send,group_id from information2_bot where date_time_send BETWEEN '2019-01-25 15:00:00' AND '2019-01-25 17:59:59' AND superintendent = '".$result["id_of_superintendent"]."' ORDER BY date_time_send ASC";
 														$queryResult1518 = mysqli_query($link,$SQLCREATE_1518);		
 														$num_run_rows1518 = mysqli_num_rows($queryResult1518);
 
