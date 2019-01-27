@@ -2,7 +2,7 @@
 	include("connect.php");
 
 						
-						$SQLCREATE_SETDATA = "select id_of_superintendent,name_superintendent,police_station";
+						$SQLCREATE_SETDATA = "select id_of_superintendent,name_superintendent,police_station from id_superintendent";
 
 
 						$queryResultinsertSetdata = mysqli_query($link,$SQLCREATE_SETDATA);		
